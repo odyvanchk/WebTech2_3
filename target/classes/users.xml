@@ -5,7 +5,7 @@
    <int>92668751</int>
   </void>
   <void property="id">
-   <int>1</int>
+   <string>5437ec2e-bdd8-461b-875c-eeecd19001fa</string>
   </void>
   <void property="login">
    <string>admin</string>
@@ -22,7 +22,7 @@
    <int>1509442</int>
   </void>
   <void property="id">
-   <int>2</int>
+   <string>19a69289-6cba-4db3-a12f-c043f3703041</string>
   </void>
   <void property="login">
    <string>Svetlana</string>
@@ -39,7 +39,7 @@
    <int>-1271629221</int>
   </void>
   <void property="id">
-   <int>3</int>
+   <string>33ae2126-d8cc-4ee2-bde6-a289afd344bb</string>
   </void>
   <void property="login">
    <string>Polina</string>
@@ -53,44 +53,13 @@
    <int>20761617</int>
   </void>
   <void property="id">
-   <int>4</int>
+   <string>f83fa0be-a04f-4462-b1f1-801874cbae94</string>
   </void>
   <void property="login">
    <string>Stanislav</string>
   </void>
   <void property="role">
    <object idref="UserRole0"/>
-  </void>
- </object>
- <object class="entity.User">
-  <void property="hashPassword">
-   <int>3483987</int>
-  </void>
-  <void property="login">
-   <string>qwer</string>
-  </void>
-  <void property="role">
-   <object class="java.lang.Enum" method="valueOf">
-    <class>entity.UserRole</class>
-    <string>GUEST</string>
-   </object>
-  </void>
- </object>
- <object class="entity.User">
-  <void property="hashPassword">
-   <int>92668751</int>
-  </void>
-  <void property="id">
-   <int>5</int>
-  </void>
-  <void property="login">
-   <string>admin1</string>
-  </void>
-  <void property="role">
-   <object class="java.lang.Enum" id="UserRole0" method="valueOf">
-    <class>entity.UserRole</class>
-    <string>AUTHUSER</string>
-   </object>
   </void>
  </object>
 </java>

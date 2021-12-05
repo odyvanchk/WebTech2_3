@@ -7,11 +7,11 @@ public class StudentCase implements Serializable {
     private String surname;
     private double GPA;
     private String speciality;
-    private int id;
+    private String id;
 
     public StudentCase() {}
 
-    public StudentCase(String name, String surname, double GPA, String speciality, int id)  {
+    public StudentCase(String name, String surname, double GPA, String speciality, String id)  {
         this.name = name;
         this.surname = surname;
         this.GPA = GPA;
@@ -19,11 +19,11 @@ public class StudentCase implements Serializable {
         this.id = id;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

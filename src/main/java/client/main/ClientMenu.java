@@ -10,6 +10,7 @@ import entity.UserRole;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class ClientMenu {
     private static User currentUser = new User(UserRole.UNAUTHUSER);
@@ -78,12 +79,14 @@ public class ClientMenu {
         System.out.println("Enter password");
         user.setHashPassword(in.nextLine().hashCode());
 
+        user.setId(UUID.randomUUID().toString());
+
         System.out.println("Enter role");
-        System.out.println("1. Guest");
-        System.out.println("2. Authorised user");
-        if (currentUser.getRole().equals(UserRole.ADMIN)){
-            System.out.println("3. Admin");
-        }
+        System.out.println("0. Authorised user");
+        System.out.println("1. Admin");
+        System.out.println("2. Guest");
+
+
         Scanner role = new Scanner(System.in);
         user.setRole(UserRole.values()[role.nextInt()]);
 

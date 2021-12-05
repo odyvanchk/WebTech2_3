@@ -13,7 +13,7 @@ public interface ClientDAO {
 
     boolean createStudentCase(StudentCase studentCase) throws IOException;
 
-    StudentCase getStudentCaseById(int caseId) throws IOException;
+    StudentCase getStudentCaseById(String caseId) throws IOException;
 
     User login(User user) throws IOException;
 

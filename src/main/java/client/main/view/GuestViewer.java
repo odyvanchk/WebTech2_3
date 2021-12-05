@@ -1,14 +1,11 @@
 package client.main.view;
 
-import client.main.printInfo.PrintStudentCaseInfo;
-import client.service.ClientService;
-import client.service.ClientServiceFactory;
+import client.main.Methods;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class GuestViewer {
-    private static ClientService service = ClientServiceFactory.getInstance().getClientService();
 
     public static void view() throws IOException {
         int act = -1;
@@ -20,21 +17,14 @@ public class GuestViewer {
                 in.next();
             }
             act = in.nextInt();
-
             switch (act) {
-                case 1 -> {
-                    PrintStudentCaseInfo.printAll(service.getStudentCases());
-                }
-                case 2 -> {
-                    System.out.println("Enter id ");
-                    int id = in.nextInt();
-
-                    PrintStudentCaseInfo.printOne(service.getStudentCaseById(id));
-                }
+                case 1 -> Methods.getStudentCases();
+                case 2 -> Methods.getStudentCaseById();
                 default -> { return; }
             }
         }
     }
+
     private static void printMenu(){
         System.out.println("Choose activity");
         System.out.println("1. get all student cases");

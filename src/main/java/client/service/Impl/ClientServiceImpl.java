@@ -30,7 +30,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public StudentCase getStudentCaseById(int caseId) throws IOException {
+    public StudentCase getStudentCaseById(String caseId) throws IOException {
         return ClientDAOFactory.getInstance().getClientDAO().getStudentCaseById(caseId);
     }
 

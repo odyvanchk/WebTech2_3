@@ -11,29 +11,31 @@ public class ServerMain {
 
 
 //        List<StudentCase> list = new ArrayList<>();
-//        StudentCase s1 = new StudentCase("Vasya","Petrov",6.7,"POIT",1);
+//        StudentCase s1 = new StudentCase("Vasya","Petrov",6.7,"POIT",UUID.randomUUID().toString());
 //        list.add(s1);
-//        StudentCase s2 = new StudentCase("Valentina","Petrova",6.7,"POIT",2);
+//        StudentCase s2 = new StudentCase("Valentina","Petrova",6.7,"POIT",UUID.randomUUID().toString());
 //        list.add(s2);
-//        StudentCase s3 = new StudentCase("Vasya","Petrov",6.7,"POIT",3);
+//        StudentCase s3 = new StudentCase("Vasya","Petrov",6.7,"POIT",UUID.randomUUID().toString());
 //        list.add(s3);
-//        StudentCase s4 = new StudentCase("Vasya","Petrov",6.7,"POIT",4);
+//        StudentCase s4 = new StudentCase("Vasya","Petrov",6.7,"POIT",UUID.randomUUID().toString());
 //        list.add(s4);
 //
 //
+//
 //        List<User> list1 = new ArrayList<>();
-//        User u1 = new User("admin","admin".hashCode(), UserRole.ADMIN,1);
+//        User u1 = new User("admin","admin".hashCode(), UserRole.ADMIN, UUID.randomUUID().toString());
 //        list1.add(u1);
 //
-//        User u2 = new User("Svetlana","1234".hashCode(), UserRole.AUTHUSER,2);
+//        User u2 = new User("Svetlana","1234".hashCode(), UserRole.AUTHUSER,UUID.randomUUID().toString());
 //        list1.add(u2);
 //
-//        User u3 = new User("Polina","flower".hashCode(), UserRole.AUTHUSER,3);
+//        User u3 = new User("Polina","flower".hashCode(), UserRole.AUTHUSER,UUID.randomUUID().toString());
 //        list1.add(u3);
 //
-//        User u4 = new User("Stanislav","admin1234".hashCode(), UserRole.ADMIN,4);
+//        User u4 = new User("Stanislav","admin1234".hashCode(), UserRole.ADMIN,UUID.randomUUID().toString());
 //        list1.add(u4);
-//
+
+
 
     }
 }

@@ -5,7 +5,7 @@
    <double>6.7</double>
   </void>
   <void property="id">
-   <int>0</int>
+   <string>d5103440-13d2-4583-a2a0-4d7180bcaeff</string>
   </void>
   <void property="name">
    <string>Vasya</string>
@@ -22,7 +22,7 @@
    <double>6.7</double>
   </void>
   <void property="id">
-   <int>1</int>
+   <string>b94e87d5-17ec-46d9-b966-2635111bc47b</string>
   </void>
   <void property="name">
    <string>Valentina</string>
@@ -39,7 +39,7 @@
    <double>6.7</double>
   </void>
   <void property="id">
-   <int>2</int>
+   <string>0a0390ce-b558-4674-9916-e716083e71a1</string>
   </void>
   <void property="name">
    <string>Vasya</string>
@@ -56,7 +56,7 @@
    <double>6.7</double>
   </void>
   <void property="id">
-   <int>3</int>
+   <string>f7f9838c-7377-4ff3-83a0-919ce81d39d5</string>
   </void>
   <void property="name">
    <string>Vasya</string>
@@ -70,36 +70,19 @@
  </object>
  <object class="entity.StudentCase">
   <void property="GPA">
-   <double>3.0</double>
+   <double>9.0</double>
   </void>
   <void property="id">
-   <int>4</int>
+   <string>8ab99828-57d0-45e3-8ecc-c408daafc2dc</string>
   </void>
   <void property="name">
-   <string>sd</string>
+   <string>Petya</string>
   </void>
   <void property="speciality">
-   <string></string>
+   <string>POIT</string>
   </void>
   <void property="surname">
-   <string>er</string>
-  </void>
- </object>
- <object class="entity.StudentCase">
-  <void property="GPA">
-   <double>34.0</double>
-  </void>
-  <void property="id">
-   <int>5</int>
-  </void>
-  <void property="name">
-   <string>sd</string>
-  </void>
-  <void property="speciality">
-   <string>poit</string>
-  </void>
-  <void property="surname">
-   <string>as</string>
+   <string>Pupkin</string>
   </void>
  </object>
 </java>

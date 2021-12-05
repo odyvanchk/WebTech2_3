@@ -33,7 +33,7 @@ public class SocketHandler extends Thread{
                 ClientRequest req = (ClientRequest) in.readObject();
                 Response response = switch (((ClientRequest) req).getRequestType()) {
 
-                    case GETBYID -> service.getStudentCaseById((int) req.getBody());
+                    case GETBYID -> service.getStudentCaseById((String) req.getBody());
                     case EDIT -> service.editStudentCase((StudentCase) req.getBody());
                     case VIEW -> service.getStudentCases();
                     case CREATE -> service.createStudentCase((StudentCase)req.getBody());

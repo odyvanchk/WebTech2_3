@@ -14,7 +14,7 @@ public interface ServerService {
 
     Response createStudentCase(StudentCase studentCase);
 
-    Response getStudentCaseById(int caseId);
+    Response getStudentCaseById(String caseId);
 
     Response login(User user);
 

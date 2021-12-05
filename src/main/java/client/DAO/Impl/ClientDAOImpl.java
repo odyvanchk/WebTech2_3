@@ -31,7 +31,7 @@ public class ClientDAOImpl implements ClientDAO {
     }
 
     @Override
-    public StudentCase getStudentCaseById(int caseId) throws IOException {
+    public StudentCase getStudentCaseById(String caseId) throws IOException {
         return (StudentCase) socketManager.sendRequest(caseId, RequestType.GETBYID).getBody();
     }
 

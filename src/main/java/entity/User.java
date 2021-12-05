@@ -6,11 +6,11 @@ public class User implements Serializable {
     private String login;
     private int hashPassword;
     private UserRole role;
-    private int id;
+    private String id;
 
     public User() {}
 
-    public User(String login, int hashPassword, UserRole role, int id) {
+    public User(String login, int hashPassword, UserRole role, String id) {
         this.login = login;
         this.hashPassword = hashPassword;
         this.role = role;
@@ -45,11 +45,11 @@ public class User implements Serializable {
         this.role = role;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

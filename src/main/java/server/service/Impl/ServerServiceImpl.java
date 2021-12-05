@@ -29,7 +29,7 @@ public class ServerServiceImpl implements ServerService {
     }
 
     @Override
-    public Response getStudentCaseById(int caseId) {
+    public Response getStudentCaseById(String caseId) {
         return ServerDAOFactory.getInstance().getServerDAO().getStudentCaseById(caseId);
     }
 

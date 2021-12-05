@@ -1,15 +1,14 @@
 package client.main.view;
 
+import client.main.Methods;
 import client.main.printInfo.PrintStudentCaseInfo;
 import client.service.ClientService;
 import client.service.ClientServiceFactory;
-import entity.StudentCase;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class AuthorizedUserViewer {
-    private static ClientService service = ClientServiceFactory.getInstance().getClientService();
 
     public static void view() throws IOException {
         int act = -1;
@@ -21,68 +20,16 @@ public class AuthorizedUserViewer {
               in.next();
             }
             act = in.nextInt();
-
             switch (act) {
-                case 1 -> {
-                    PrintStudentCaseInfo.printAll(service.getStudentCases());
-                }
-                case 2 -> {
-                    StudentCase studentCase = new StudentCase();
-
-                    System.out.println("Enter id ");
-                    studentCase.setId(in.nextInt());
-                    in.nextLine();
-
-                    System.out.println("Enter name ");
-                    studentCase.setName(in.nextLine());
-
-                    System.out.println("Enter surname");
-                    studentCase.setSurname(in.nextLine());
-
-                    System.out.println("Enter GPA");
-                    studentCase.setGPA(in.nextDouble());
-                    in.nextLine();
-
-                    System.out.println("Enter Speciality");
-                    studentCase.setSpeciality(in.nextLine());
-
-                    service.editStudentCase(studentCase);
-                }
-                case 3 -> {
-                    in.nextLine();
-                    StudentCase studentCase = new StudentCase();
-                    System.out.println("Enter name ");
-                    studentCase.setName(in.nextLine());
-
-                    System.out.println("Enter surname");
-                    studentCase.setSurname(in.nextLine());
-
-                    System.out.println("Enter GPA");
-                    studentCase.setGPA(in.nextDouble());
-                    in.nextLine();
-
-                    System.out.println("Enter Speciality");
-                    studentCase.setSpeciality(in.nextLine());
-
-                    studentCase.setId(4);
-
-                    if (service.createStudentCase(studentCase)){
-                        System.out.println("Success");
-                    }
-                    else{
-                        System.out.println("Error");
-                    }
-                }
-                case 4 -> {
-                    System.out.println("Enter id ");
-                    int id = in.nextInt();
-
-                    PrintStudentCaseInfo.printOne(service.getStudentCaseById(id));
-                }
+                case 1 -> Methods.getStudentCases();
+                case 2 -> Methods.editStudentCase();
+                case 3 -> Methods.createStudentCase();
+                case 4 -> Methods.getStudentCaseById();
                 default -> { return; }
             }
         }
     }
+
     private static void printMenu(){
         System.out.println("Choose activity");
         System.out.println("1. get all student cases");

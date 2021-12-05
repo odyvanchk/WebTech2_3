@@ -10,6 +10,7 @@ import java.beans.XMLEncoder;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ServerDAOImpl implements ServerDAO {
     private final String PATH_STUDENTS = "src/main/resources/archive_students.xml";
@@ -92,7 +93,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public Response getStudentCaseById(int caseId) {
+    public Response getStudentCaseById(String caseId) {
         XMLDecoder decoder = null;
         try{
             decoder = new XMLDecoder(
@@ -101,7 +102,7 @@ public class ServerDAOImpl implements ServerDAO {
             StudentCase result;
             do{
                 result = (StudentCase)decoder.readObject();
-                if (result.getId() == caseId )
+                if (Objects.equals(result.getId(), caseId))
                     return new Response( result, true);
 
             }
