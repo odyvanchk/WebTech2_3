@@ -52,4 +52,14 @@ public class User implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "login='" + login + '\'' +
+                ", hashPassword=" + hashPassword +
+                ", role=" + role +
+                ", id=" + id +
+                '}';
+    }
 }

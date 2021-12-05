@@ -9,18 +9,16 @@ import java.util.List;
 public interface ClientDAO {
     List<StudentCase> getStudentCases() throws IOException;
 
-    void editStudentCase(int caseId);
+    boolean editStudentCase(StudentCase studentCase) throws IOException;
 
-    void createStudentCase(StudentCase studentCase);
+    boolean createStudentCase(StudentCase studentCase) throws IOException;
 
-    StudentCase getStudentCaseById(int caseId);
+    StudentCase getStudentCaseById(int caseId) throws IOException;
 
     User login(User user) throws IOException;
 
     User signIn(User user) throws IOException;
 
-    void saveStudentCases(List<StudentCase> list);
-
-    void saveUsersList(List<User> list);
+    List<User> getUsers() throws IOException;
 
 }

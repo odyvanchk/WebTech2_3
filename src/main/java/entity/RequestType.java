@@ -8,6 +8,8 @@ public enum RequestType implements Serializable {
     VIEW,
     LOGIN,
     SIGNIN,
-    EXIT;
+    GETBYID,
+    EXIT,
+    VIEWUSERS;
 
 }

@@ -45,18 +45,79 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public void editStudentCase(int caseId) {
+    public Response editStudentCase(StudentCase studentCase) {
+        List<StudentCase> studentCases = new ArrayList<>();
+        XMLDecoder decoder = null;
+        try{
+            decoder = new XMLDecoder(
+                    new BufferedInputStream(
+                            new FileInputStream(PATH_STUDENTS)));
+            StudentCase result;
+            do{
+                result = (StudentCase) decoder.readObject();
+                if (result.getId() == studentCase.getId()){
+                    studentCases.add(studentCase);
+                }
+                else{
+                    studentCases.add(result);
+                }
 
+            }
+            while(result != null);
+
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found");
+        }
+        catch (ArrayIndexOutOfBoundsException ignored){
+            //end of file
+        }finally {
+            decoder.close();
+        }
+        saveStudentCases(studentCases);
+
+        Response response = new Response();
+        response.setBody(true);
+        return response;
     }
 
     @Override
-    public void createStudentCase(StudentCase studentCase) {
+    public Response createStudentCase(StudentCase studentCase) {
+        Response tmp = getStudentCases();
+        List<StudentCase> cases = (List<StudentCase>) tmp.getBody();
+        cases.add(studentCase);
 
+        saveStudentCases(cases);
+        return new Response(true, true);
     }
 
     @Override
     public Response getStudentCaseById(int caseId) {
-        return null;
+        XMLDecoder decoder = null;
+        try{
+            decoder = new XMLDecoder(
+                    new BufferedInputStream(
+                            new FileInputStream(PATH_STUDENTS)));
+            StudentCase result;
+            do{
+                result = (StudentCase)decoder.readObject();
+                if (result.getId() == caseId )
+                    return new Response( result, true);
+
+            }
+            while(result != null);
+
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found");
+            return new Response(null, false);
+        }
+        catch (ArrayIndexOutOfBoundsException ignored){
+            //end of file
+        }finally {
+            decoder.close();
+        }
+        return new Response(null, true);
     }
 
     @Override
@@ -122,6 +183,28 @@ public class ServerDAOImpl implements ServerDAO {
 
         Response response = new Response(user, true);
         return response;
+    }
+
+    @Override
+    public Response getUsers() {
+        List<User> users = new ArrayList<>();
+        try (XMLDecoder decoder = new XMLDecoder(
+                new BufferedInputStream(
+                        new FileInputStream(PATH_USERS)))) {
+            User result;
+            do {
+                result = (User) decoder.readObject();
+                users.add(result);
+            }
+            while (result != null);
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found");
+        } catch (ArrayIndexOutOfBoundsException ignored) {
+            //end of file
+            return new Response(users, true);
+        }
+        return new Response(null, false);
     }
 
     @Override

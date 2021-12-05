@@ -10,9 +10,9 @@ public interface ServerService {
 
     Response getStudentCases();
 
-    void editStudentCase(int caseId);
+    Response editStudentCase(StudentCase studentCase);
 
-    void createStudentCase(StudentCase studentCase);
+    Response createStudentCase(StudentCase studentCase);
 
     Response getStudentCaseById(int caseId);
 
@@ -20,8 +20,11 @@ public interface ServerService {
 
     Response signIn(User user);
 
+    Response getUsers();
+
     void saveStudentCases(List<StudentCase> list);
 
     void saveUsersList(List<User> list);
+
 
 }

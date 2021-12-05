@@ -21,18 +21,18 @@ public class ClientDAOImpl implements ClientDAO {
 
 
     @Override
-    public void editStudentCase(int caseId) {
-
+    public boolean editStudentCase(StudentCase studentCase) throws IOException {
+        return (boolean) socketManager.sendRequest(studentCase,RequestType.EDIT).getBody();
     }
 
     @Override
-    public void createStudentCase(StudentCase studentCase) {
-
+    public boolean createStudentCase(StudentCase studentCase) throws IOException {
+        return (boolean) socketManager.sendRequest(studentCase, RequestType.CREATE).getBody();
     }
 
     @Override
-    public StudentCase getStudentCaseById(int caseId) {
-        return null;
+    public StudentCase getStudentCaseById(int caseId) throws IOException {
+        return (StudentCase) socketManager.sendRequest(caseId, RequestType.GETBYID).getBody();
     }
 
     @Override
@@ -46,12 +46,8 @@ public class ClientDAOImpl implements ClientDAO {
     }
 
     @Override
-    public void saveStudentCases(List<StudentCase> list) {
-
+    public List<User> getUsers() throws IOException {
+        return (List<User>) socketManager.sendRequest(null, RequestType.VIEWUSERS).getBody();
     }
 
-    @Override
-    public void saveUsersList(List<User> list) {
-
-    }
 }

@@ -19,6 +19,14 @@ public class StudentCase implements Serializable {
         this.id = id;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -49,5 +57,16 @@ public class StudentCase implements Serializable {
 
     public void setSpeciality(String speciality) {
         this.speciality = speciality;
+    }
+
+    @Override
+    public String toString() {
+        return "StudentCase{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", GPA=" + GPA +
+                ", speciality='" + speciality + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

@@ -76,4 +76,21 @@
    </object>
   </void>
  </object>
+ <object class="entity.User">
+  <void property="hashPassword">
+   <int>92668751</int>
+  </void>
+  <void property="id">
+   <int>5</int>
+  </void>
+  <void property="login">
+   <string>admin1</string>
+  </void>
+  <void property="role">
+   <object class="java.lang.Enum" id="UserRole0" method="valueOf">
+    <class>entity.UserRole</class>
+    <string>AUTHUSER</string>
+   </object>
+  </void>
+ </object>
 </java>

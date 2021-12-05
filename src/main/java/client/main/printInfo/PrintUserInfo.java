@@ -1,4 +1,4 @@
-package client.main;
+package client.main.printInfo;
 
 import entity.User;
 

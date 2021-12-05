@@ -12,23 +12,26 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public List<StudentCase> getStudentCases() throws IOException {
         return ClientDAOFactory.getInstance().getClientDAO().getStudentCases();
-
-    }
-
-
-    @Override
-    public void editStudentCase(int caseId) {
-
     }
 
     @Override
-    public void createStudentCase(StudentCase studentCase) {
-
+    public List<User> getUsers() throws IOException {
+        return ClientDAOFactory.getInstance().getClientDAO().getUsers();
     }
 
     @Override
-    public StudentCase getStudentCaseById(int caseId) {
-        return null;
+    public boolean editStudentCase(StudentCase studentCase) throws IOException {
+        return ClientDAOFactory.getInstance().getClientDAO().editStudentCase(studentCase);
+    }
+
+    @Override
+    public boolean createStudentCase(StudentCase studentCase) throws IOException {
+        return ClientDAOFactory.getInstance().getClientDAO().createStudentCase(studentCase);
+    }
+
+    @Override
+    public StudentCase getStudentCaseById(int caseId) throws IOException {
+        return ClientDAOFactory.getInstance().getClientDAO().getStudentCaseById(caseId);
     }
 
     @Override
@@ -41,13 +44,4 @@ public class ClientServiceImpl implements ClientService {
         return ClientDAOFactory.getInstance().getClientDAO().signIn(user);
     }
 
-    @Override
-    public void saveStudentCases(List<StudentCase> list) {
-
-    }
-
-    @Override
-    public void saveUsersList(List<User> list) {
-
-    }
 }

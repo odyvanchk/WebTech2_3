@@ -4,6 +4,9 @@
   <void property="GPA">
    <double>6.7</double>
   </void>
+  <void property="id">
+   <int>0</int>
+  </void>
   <void property="name">
    <string>Vasya</string>
   </void>
@@ -17,6 +20,9 @@
  <object class="entity.StudentCase">
   <void property="GPA">
    <double>6.7</double>
+  </void>
+  <void property="id">
+   <int>1</int>
   </void>
   <void property="name">
    <string>Valentina</string>
@@ -32,6 +38,9 @@
   <void property="GPA">
    <double>6.7</double>
   </void>
+  <void property="id">
+   <int>2</int>
+  </void>
   <void property="name">
    <string>Vasya</string>
   </void>
@@ -46,6 +55,9 @@
   <void property="GPA">
    <double>6.7</double>
   </void>
+  <void property="id">
+   <int>3</int>
+  </void>
   <void property="name">
    <string>Vasya</string>
   </void>
@@ -54,6 +66,40 @@
   </void>
   <void property="surname">
    <string>Petrov</string>
+  </void>
+ </object>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>3.0</double>
+  </void>
+  <void property="id">
+   <int>4</int>
+  </void>
+  <void property="name">
+   <string>sd</string>
+  </void>
+  <void property="speciality">
+   <string></string>
+  </void>
+  <void property="surname">
+   <string>er</string>
+  </void>
+ </object>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>34.0</double>
+  </void>
+  <void property="id">
+   <int>5</int>
+  </void>
+  <void property="name">
+   <string>sd</string>
+  </void>
+  <void property="speciality">
+   <string>poit</string>
+  </void>
+  <void property="surname">
+   <string>as</string>
   </void>
  </object>
 </java>

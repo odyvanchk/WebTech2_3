@@ -19,18 +19,18 @@ public class ServerServiceImpl implements ServerService {
     }
 
     @Override
-    public void editStudentCase(int caseId) {
-
+    public Response editStudentCase(StudentCase studentCase) {
+        return ServerDAOFactory.getInstance().getServerDAO().editStudentCase(studentCase);
     }
 
     @Override
-    public void createStudentCase(StudentCase studentCase) {
-
+    public Response createStudentCase(StudentCase studentCase) {
+        return ServerDAOFactory.getInstance().getServerDAO().createStudentCase(studentCase);
     }
 
     @Override
     public Response getStudentCaseById(int caseId) {
-        return null;
+        return ServerDAOFactory.getInstance().getServerDAO().getStudentCaseById(caseId);
     }
 
     @Override
@@ -46,12 +46,17 @@ public class ServerServiceImpl implements ServerService {
     }
 
     @Override
-    public void saveStudentCases(List<StudentCase> list) {
+    public Response getUsers() {
+        return ServerDAOFactory.getInstance().getServerDAO().getUsers();
+    }
 
+    @Override
+    public void saveStudentCases(List<StudentCase> list) {
+        ServerDAOFactory.getInstance().getServerDAO().saveStudentCases(list);
     }
 
     @Override
     public void saveUsersList(List<User> list) {
-
+        ServerDAOFactory.getInstance().getServerDAO().saveUsersList(list);
     }
 }

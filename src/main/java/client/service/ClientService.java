@@ -9,18 +9,17 @@ import java.util.List;
 public interface ClientService {
     List<StudentCase> getStudentCases() throws IOException;
 
-    void editStudentCase(int caseId);
+    List<User> getUsers() throws IOException;
 
-    void createStudentCase(StudentCase studentCase);
+    boolean editStudentCase(StudentCase studentCase) throws IOException;
 
-    StudentCase getStudentCaseById(int caseId);
+    boolean createStudentCase(StudentCase studentCase) throws IOException;
+
+    StudentCase getStudentCaseById(int caseId) throws IOException;
 
     User login(User user) throws IOException;
 
     User signIn(User user) throws IOException;
 
-    void saveStudentCases(List<StudentCase> list);
-
-    void saveUsersList(List<User> list);
 
 }
