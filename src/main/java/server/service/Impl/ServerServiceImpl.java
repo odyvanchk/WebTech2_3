@@ -34,8 +34,10 @@ public class ServerServiceImpl implements ServerService {
     }
 
     @Override
-    public void login(User user) {
-
+    public Response login(User user) {
+        ServerDAOFactory factory = ServerDAOFactory.getInstance();
+        ServerDAO serverDAO = factory.getServerDAO();
+        return serverDAO.login(user);
     }
 
     @Override

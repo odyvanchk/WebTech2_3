@@ -2,6 +2,7 @@ package server.service.socketHandler;
 
 import entity.ClientRequest;
 import entity.Response;
+import entity.User;
 import server.service.ServerService;
 import server.service.ServerServiceFactory;
 
@@ -34,6 +35,7 @@ public class SocketHandler extends Thread{
                     //case EDIT -> service.editStudentCase((int) ((ClientRequest) req).getBody());
                     case VIEW -> service.getStudentCases();
                     //case CREATE -> service.createStudentCase((StudentCase) ((ClientRequest) req).getBody());
+                    case LOGIN -> service.login((User) req.getBody());
                      default -> null;
                 };
                 send(response);

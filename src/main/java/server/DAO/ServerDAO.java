@@ -15,7 +15,7 @@ public interface ServerDAO {
 
     Response getStudentCaseById(int caseId);
 
-    void login(User user);
+    Response login(User user);
 
     void signIn(User user);
 

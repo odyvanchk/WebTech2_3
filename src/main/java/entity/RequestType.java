@@ -6,5 +6,8 @@ public enum RequestType implements Serializable {
     CREATE,
     EDIT,
     VIEW,
-    EXIT
+    LOGIN,
+    SIGNIN,
+    EXIT;
+
 }
