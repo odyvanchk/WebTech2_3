@@ -17,7 +17,7 @@ public interface ClientService {
 
     User login(User user) throws IOException;
 
-    void signIn(User user);
+    User signIn(User user) throws IOException;
 
     void saveStudentCases(List<StudentCase> list);
 

@@ -36,6 +36,7 @@ public class SocketHandler extends Thread{
                     case VIEW -> service.getStudentCases();
                     //case CREATE -> service.createStudentCase((StudentCase) ((ClientRequest) req).getBody());
                     case LOGIN -> service.login((User) req.getBody());
+                    case SIGNIN -> service.signIn((User) req.getBody());
                      default -> null;
                 };
                 send(response);

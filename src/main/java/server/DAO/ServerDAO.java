@@ -17,7 +17,7 @@ public interface ServerDAO {
 
     Response login(User user);
 
-    void signIn(User user);
+    Response signIn(User user);
 
     void saveStudentCases(List<StudentCase> list);
 

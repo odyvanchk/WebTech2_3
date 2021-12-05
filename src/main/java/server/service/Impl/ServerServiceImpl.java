@@ -41,8 +41,8 @@ public class ServerServiceImpl implements ServerService {
     }
 
     @Override
-    public void signIn(User user) {
-
+    public Response signIn(User user) {
+        return ServerDAOFactory.getInstance().getServerDAO().signIn(user);
     }
 
     @Override

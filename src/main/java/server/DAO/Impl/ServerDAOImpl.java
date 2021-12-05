@@ -91,8 +91,37 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public void signIn(User user) {
+    public Response signIn(User user) {
+        List<User> users = new ArrayList<>();
+        XMLDecoder decoder = null;
+        try{
+            decoder = new XMLDecoder(
+                    new BufferedInputStream(
+                            new FileInputStream(PATH_USERS)));
+            User result;
+            do{
+                result = (User)decoder.readObject();
+                if (result.getLogin().equals(user.getLogin()) && result.getHashPassword() == user.getHashPassword()){
+                    return new Response (null, true);
+                }
+                users.add(result);
+            }
+            while(result != null);
 
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found");
+        }
+        catch (ArrayIndexOutOfBoundsException ignored){
+            //end of file
+        }finally {
+            decoder.close();
+        }
+        users.add(user);
+        saveUsersList(users);
+
+        Response response = new Response(user, true);
+        return response;
     }
 
     @Override

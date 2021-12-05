@@ -37,8 +37,8 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public void signIn(User user) {
-
+    public User signIn(User user) throws IOException {
+        return ClientDAOFactory.getInstance().getClientDAO().signIn(user);
     }
 
     @Override

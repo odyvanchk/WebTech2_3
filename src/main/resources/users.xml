@@ -62,4 +62,18 @@
    <object idref="UserRole0"/>
   </void>
  </object>
+ <object class="entity.User">
+  <void property="hashPassword">
+   <int>3483987</int>
+  </void>
+  <void property="login">
+   <string>qwer</string>
+  </void>
+  <void property="role">
+   <object class="java.lang.Enum" method="valueOf">
+    <class>entity.UserRole</class>
+    <string>GUEST</string>
+   </object>
+  </void>
+ </object>
 </java>

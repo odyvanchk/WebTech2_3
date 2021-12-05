@@ -41,8 +41,8 @@ public class ClientDAOImpl implements ClientDAO {
     }
 
     @Override
-    public void signIn(User user) {
-
+    public User signIn(User user) throws IOException {
+        return (User) socketManager.sendRequest(user, RequestType.SIGNIN).getBody();
     }
 
     @Override
