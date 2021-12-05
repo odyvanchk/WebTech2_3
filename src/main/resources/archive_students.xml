@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="16.0.2" class="java.beans.XMLDecoder">
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
+  </void>
+  <void property="name">
+   <string>Vasya</string>
+  </void>
+  <void property="speciality">
+   <string>POIT</string>
+  </void>
+  <void property="surname">
+   <string>Petrov</string>
+  </void>
+ </object>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
+  </void>
+  <void property="name">
+   <string>Valentina</string>
+  </void>
+  <void property="speciality">
+   <string>POIT</string>
+  </void>
+  <void property="surname">
+   <string>Petrova</string>
+  </void>
+ </object>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
+  </void>
+  <void property="name">
+   <string>Vasya</string>
+  </void>
+  <void property="speciality">
+   <string>POIT</string>
+  </void>
+  <void property="surname">
+   <string>Petrov</string>
+  </void>
+ </object>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
+  </void>
+  <void property="name">
+   <string>Vasya</string>
+  </void>
+  <void property="speciality">
+   <string>POIT</string>
+  </void>
+  <void property="surname">
+   <string>Petrov</string>
+  </void>
+ </object>
+</java>

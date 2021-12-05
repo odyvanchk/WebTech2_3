@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="16.0.2" class="java.beans.XMLDecoder">
+ <object class="entity.User">
+  <void property="hashPassword">
+   <int>92668751</int>
+  </void>
+  <void property="id">
+   <int>1</int>
+  </void>
+  <void property="login">
+   <string>admin</string>
+  </void>
+  <void property="role">
+   <object class="java.lang.Enum" id="UserRole0" method="valueOf">
+    <class>entity.UserRole</class>
+    <string>ADMIN</string>
+   </object>
+  </void>
+ </object>
+ <object class="entity.User">
+  <void property="hashPassword">
+   <int>1509442</int>
+  </void>
+  <void property="id">
+   <int>2</int>
+  </void>
+  <void property="login">
+   <string>Svetlana</string>
+  </void>
+  <void property="role">
+   <object class="java.lang.Enum" id="UserRole1" method="valueOf">
+    <class>entity.UserRole</class>
+    <string>AUTHUSER</string>
+   </object>
+  </void>
+ </object>
+ <object class="entity.User">
+  <void property="hashPassword">
+   <int>-1271629221</int>
+  </void>
+  <void property="id">
+   <int>3</int>
+  </void>
+  <void property="login">
+   <string>Polina</string>
+  </void>
+  <void property="role">
+   <object idref="UserRole1"/>
+  </void>
+ </object>
+ <object class="entity.User">
+  <void property="hashPassword">
+   <int>20761617</int>
+  </void>
+  <void property="id">
+   <int>4</int>
+  </void>
+  <void property="login">
+   <string>Stanislav</string>
+  </void>
+  <void property="role">
+   <object idref="UserRole0"/>
+  </void>
+ </object>
+</java>
