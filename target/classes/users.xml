@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="16.0.2" class="java.beans.XMLDecoder">
- <object class="entity.User">
+ <object class="by.ermakovich.entity.User">
   <void property="hashPassword">
    <int>92668751</int>
   </void>
@@ -12,12 +12,12 @@
   </void>
   <void property="role">
    <object class="java.lang.Enum" id="UserRole0" method="valueOf">
-    <class>entity.UserRole</class>
+    <class>by.ermakovich.entity.UserRole</class>
     <string>ADMIN</string>
    </object>
   </void>
  </object>
- <object class="entity.User">
+ <object class="by.ermakovich.entity.User">
   <void property="hashPassword">
    <int>1509442</int>
   </void>
@@ -29,12 +29,12 @@
   </void>
   <void property="role">
    <object class="java.lang.Enum" id="UserRole1" method="valueOf">
-    <class>entity.UserRole</class>
+    <class>by.ermakovich.entity.UserRole</class>
     <string>AUTHUSER</string>
    </object>
   </void>
  </object>
- <object class="entity.User">
+ <object class="by.ermakovich.entity.User">
   <void property="hashPassword">
    <int>-1271629221</int>
   </void>
@@ -48,7 +48,7 @@
    <object idref="UserRole1"/>
   </void>
  </object>
- <object class="entity.User">
+ <object class="by.ermakovich.entity.User">
   <void property="hashPassword">
    <int>20761617</int>
   </void>
@@ -60,6 +60,23 @@
   </void>
   <void property="role">
    <object idref="UserRole0"/>
+  </void>
+ </object>
+ <object class="by.ermakovich.entity.User">
+  <void property="hashPassword">
+   <int>98708952</int>
+  </void>
+  <void property="id">
+   <string>38f75dcc-6850-4026-9ea7-97eb4da04fb7</string>
+  </void>
+  <void property="login">
+   <string>guest</string>
+  </void>
+  <void property="role">
+   <object class="java.lang.Enum" method="valueOf">
+    <class>by.ermakovich.entity.UserRole</class>
+    <string>GUEST</string>
+   </object>
   </void>
  </object>
 </java>

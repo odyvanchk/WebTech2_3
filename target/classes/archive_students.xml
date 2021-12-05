@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="16.0.2" class="java.beans.XMLDecoder">
- <object class="entity.StudentCase">
+ <object class="by.ermakovich.entity.StudentCase">
   <void property="GPA">
    <double>6.7</double>
   </void>
@@ -17,7 +17,7 @@
    <string>Petrov</string>
   </void>
  </object>
- <object class="entity.StudentCase">
+ <object class="by.ermakovich.entity.StudentCase">
   <void property="GPA">
    <double>6.7</double>
   </void>
@@ -34,7 +34,7 @@
    <string>Petrova</string>
   </void>
  </object>
- <object class="entity.StudentCase">
+ <object class="by.ermakovich.entity.StudentCase">
   <void property="GPA">
    <double>6.7</double>
   </void>
@@ -51,7 +51,7 @@
    <string>Petrov</string>
   </void>
  </object>
- <object class="entity.StudentCase">
+ <object class="by.ermakovich.entity.StudentCase">
   <void property="GPA">
    <double>6.7</double>
   </void>
@@ -68,7 +68,7 @@
    <string>Petrov</string>
   </void>
  </object>
- <object class="entity.StudentCase">
+ <object class="by.ermakovich.entity.StudentCase">
   <void property="GPA">
    <double>9.0</double>
   </void>
