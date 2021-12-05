@@ -4,7 +4,7 @@ import server.service.serverLauncher.Server;
 
 import java.io.IOException;
 
-public class Main {
+public class ServerMain {
     public static void main(String[] args) throws IOException {
         Server server = new Server(8080);
         server.launchAndWait();

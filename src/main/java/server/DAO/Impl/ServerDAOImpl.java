@@ -1,5 +1,6 @@
 package server.DAO.Impl;
 
+import entity.Response;
 import entity.StudentCase;
 import entity.User;
 import server.DAO.ServerDAO;
@@ -15,7 +16,7 @@ public class ServerDAOImpl implements ServerDAO {
     private final String PATH_USERS = "src/main/resources/users.xml";
 
     @Override
-    public List<StudentCase> getAllStudents() {
+    public Response getStudentCases() {
         List<StudentCase> studentCases = new ArrayList<>();
         XMLDecoder decoder = null;
         try{
@@ -38,7 +39,9 @@ public class ServerDAOImpl implements ServerDAO {
         }finally {
             decoder.close();
         }
-        return studentCases;
+        Response response = new Response();
+        response.setBody(studentCases);
+        return response;
     }
 
     @Override
@@ -52,7 +55,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public StudentCase getStudentCaseById(int caseId) {
+    public Response getStudentCaseById(int caseId) {
         return null;
     }
 

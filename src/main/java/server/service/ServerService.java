@@ -1,5 +1,6 @@
 package server.service;
 
+import entity.Response;
 import entity.StudentCase;
 import entity.User;
 
@@ -7,12 +8,20 @@ import java.util.List;
 
 public interface ServerService {
 
-    List<User> getAllClients();
+    Response getStudentCases();
 
-    StudentCase getStudentById(int id);
+    void editStudentCase(int caseId);
 
-    void editCaseByName(String name);
+    void createStudentCase(StudentCase studentCase);
 
-    void createCase(Object newCase);
+    Response getStudentCaseById(int caseId);
+
+    void login(User user);
+
+    void signIn(User user);
+
+    void saveStudentCases(List<StudentCase> list);
+
+    void saveUsersList(List<User> list);
 
 }

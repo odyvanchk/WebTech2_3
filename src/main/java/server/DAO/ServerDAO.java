@@ -1,18 +1,19 @@
 package server.DAO;
 
+import entity.Response;
 import entity.StudentCase;
 import entity.User;
 
 import java.util.List;
 
 public interface ServerDAO {
-    List<StudentCase> getAllStudents();
+    Response getStudentCases();
 
     void editStudentCase(int caseId);
 
     void createStudentCase(StudentCase studentCase);
 
-    StudentCase getStudentCaseById(int caseId);
+    Response getStudentCaseById(int caseId);
 
     void login(User user);
 

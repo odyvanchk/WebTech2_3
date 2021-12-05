@@ -1,10 +1,11 @@
 package server.service.socketHandler;
 
 import entity.ClientRequest;
-import entity.RequestType;
+import entity.Response;
 import server.service.ServerService;
 import server.service.ServerServiceFactory;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -15,7 +16,7 @@ public class SocketHandler extends Thread{
     private final ObjectOutputStream out;
 
     public SocketHandler(Socket socket) throws IOException {
-        socket = new Socket();
+
         in = new ObjectInputStream(socket.getInputStream());
         out = new ObjectOutputStream(socket.getOutputStream());
 
@@ -27,22 +28,20 @@ public class SocketHandler extends Thread{
         try {
             ServerService service = ServerServiceFactory.getInstance().getServerService();
             while (true) {
-                Object req = in.readObject();
+                ClientRequest req = (ClientRequest) in.readObject();
+                Response response = switch (((ClientRequest) req).getRequestType()) {
 
-                if (((ClientRequest) req).getRequestType() == RequestType.EXIT){
-                    break;
-                }
-
-
-                switch (((ClientRequest) req).getRequestType()){
-                    case EDIT -> service.editCaseByName((String) ((ClientRequest) req).getBody());
-                    case VIEW -> send(service.getAllClients());
-                    case CREATE -> service.createCase(req);
-                }
-
+                    //case EDIT -> service.editStudentCase((int) ((ClientRequest) req).getBody());
+                    case VIEW -> service.getStudentCases();
+                    //case CREATE -> service.createStudentCase((StudentCase) ((ClientRequest) req).getBody());
+                     default -> null;
+                };
+                send(response);
             }
 
-        } catch (IOException | ClassNotFoundException e) {
+        }catch (EOFException ignored){}
+
+        catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
     }

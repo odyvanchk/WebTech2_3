@@ -29,24 +29,24 @@ public class SocketManager {
         Socket socket = null;
         try {
             socket = new Socket(ip, port);
-            ObjectInputStream in = new ObjectInputStream( socket.getInputStream());
-            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+
+
+            ObjectOutputStream  out = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
 
             ClientRequest request = new ClientRequest(body, requestType);
 
             out.writeObject(request);
             out.flush();
 
-            Response response = (Response) in.readObject();
 
-            socket.close();
-            in.close();
-            out.close();
-
-            return response;
+            return (Response) in.readObject();
         }
         catch (IOException | ClassNotFoundException e){
             System.out.println(e.getMessage());
+        }
+        finally {
+            socket.close();
         }
 
         return null;

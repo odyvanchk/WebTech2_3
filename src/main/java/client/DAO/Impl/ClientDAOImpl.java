@@ -4,29 +4,54 @@ import client.DAO.ClientDAO;
 import client.DAO.socketManager.SocketManager;
 import entity.RequestType;
 import entity.Response;
+import entity.StudentCase;
+import entity.User;
 
 import java.io.IOException;
+import java.util.List;
 
 public class ClientDAOImpl implements ClientDAO {
     SocketManager socketManager = new SocketManager("localhost",8080);
 
     @Override
-    public Response getAllClients() throws IOException {
-        return socketManager.sendRequest(new Object(), RequestType.VIEW);
+    public List<StudentCase> getStudentCases() throws IOException {
+        Response response = socketManager.sendRequest(null, RequestType.VIEW);
+        return (List<StudentCase>) response.getBody();
+    }
+
+
+    @Override
+    public void editStudentCase(int caseId) {
+
     }
 
     @Override
-    public Response getStudentById(int id) {
+    public void createStudentCase(StudentCase studentCase) {
+
+    }
+
+    @Override
+    public StudentCase getStudentCaseById(int caseId) {
         return null;
     }
 
     @Override
-    public void editCaseByName(String name) {
+    public void login(User user) {
 
     }
 
     @Override
-    public void createCase(Object newCase) {
+    public void signIn(User user) {
+
+    }
+
+    @Override
+    public void saveStudentCases(List<StudentCase> list) {
+
+    }
+
+    @Override
+    public void saveUsersList(List<User> list) {
 
     }
 }

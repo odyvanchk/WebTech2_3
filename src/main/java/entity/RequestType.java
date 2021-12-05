@@ -1,6 +1,8 @@
 package entity;
 
-public enum RequestType {
+import java.io.Serializable;
+
+public enum RequestType implements Serializable {
     CREATE,
     EDIT,
     VIEW,

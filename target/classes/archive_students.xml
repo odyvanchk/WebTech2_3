@@ -1,65 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="16.0.2" class="java.beans.XMLDecoder">
- <object class="entity.User">
-  <void property="hashPassword">
-   <int>92668751</int>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
   </void>
-  <void property="id">
-   <int>1</int>
+  <void property="name">
+   <string>Vasya</string>
   </void>
-  <void property="login">
-   <string>admin</string>
+  <void property="speciality">
+   <string>POIT</string>
   </void>
-  <void property="role">
-   <object class="java.lang.Enum" id="UserRole0" method="valueOf">
-    <class>entity.UserRole</class>
-    <string>ADMIN</string>
-   </object>
+  <void property="surname">
+   <string>Petrov</string>
   </void>
  </object>
- <object class="entity.User">
-  <void property="hashPassword">
-   <int>1509442</int>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
   </void>
-  <void property="id">
-   <int>2</int>
+  <void property="name">
+   <string>Valentina</string>
   </void>
-  <void property="login">
-   <string>Svetlana</string>
+  <void property="speciality">
+   <string>POIT</string>
   </void>
-  <void property="role">
-   <object class="java.lang.Enum" id="UserRole1" method="valueOf">
-    <class>entity.UserRole</class>
-    <string>AUTHUSER</string>
-   </object>
+  <void property="surname">
+   <string>Petrova</string>
   </void>
  </object>
- <object class="entity.User">
-  <void property="hashPassword">
-   <int>-1271629221</int>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
   </void>
-  <void property="id">
-   <int>3</int>
+  <void property="name">
+   <string>Vasya</string>
   </void>
-  <void property="login">
-   <string>Polina</string>
+  <void property="speciality">
+   <string>POIT</string>
   </void>
-  <void property="role">
-   <object idref="UserRole1"/>
+  <void property="surname">
+   <string>Petrov</string>
   </void>
  </object>
- <object class="entity.User">
-  <void property="hashPassword">
-   <int>20761617</int>
+ <object class="entity.StudentCase">
+  <void property="GPA">
+   <double>6.7</double>
   </void>
-  <void property="id">
-   <int>4</int>
+  <void property="name">
+   <string>Vasya</string>
   </void>
-  <void property="login">
-   <string>Stanislav</string>
+  <void property="speciality">
+   <string>POIT</string>
   </void>
-  <void property="role">
-   <object idref="UserRole0"/>
+  <void property="surname">
+   <string>Petrov</string>
   </void>
  </object>
 </java>

@@ -1,6 +1,8 @@
 package entity;
 
-public enum UserRole {
+import java.io.Serializable;
+
+public enum UserRole implements Serializable {
     AUTHUSER,
     ADMIN,
     GUEST
