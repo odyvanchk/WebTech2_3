@@ -17,7 +17,7 @@ public class ServerDAOImpl implements ServerDAO {
     private final String PATH_USERS = "src/main/resources/users.xml";
 
     @Override
-    public Response getStudentCases() {
+    public synchronized Response getStudentCases() {
         List<StudentCase> studentCases = new ArrayList<>();
         XMLDecoder decoder = null;
         try{
@@ -46,7 +46,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public Response editStudentCase(StudentCase studentCase) {
+    public synchronized Response editStudentCase(StudentCase studentCase) {
         List<StudentCase> studentCases = new ArrayList<>();
         XMLDecoder decoder = null;
         try{
@@ -83,7 +83,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public Response createStudentCase(StudentCase studentCase) {
+    public synchronized Response createStudentCase(StudentCase studentCase) {
         Response tmp = getStudentCases();
         List<StudentCase> cases = (List<StudentCase>) tmp.getBody();
         cases.add(studentCase);
@@ -93,7 +93,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public Response getStudentCaseById(String caseId) {
+    public synchronized Response getStudentCaseById(String caseId) {
         XMLDecoder decoder = null;
         try{
             decoder = new XMLDecoder(
@@ -122,7 +122,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public Response login(User user) {
+    public synchronized Response login(User user) {
         XMLDecoder decoder = null;
         try{
             decoder = new XMLDecoder(
@@ -153,7 +153,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public Response signIn(User user) {
+    public synchronized Response signIn(User user) {
         List<User> users = new ArrayList<>();
         XMLDecoder decoder = null;
         try{
@@ -187,7 +187,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public Response getUsers() {
+    public synchronized Response getUsers() {
         List<User> users = new ArrayList<>();
         try (XMLDecoder decoder = new XMLDecoder(
                 new BufferedInputStream(
@@ -209,7 +209,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public void saveStudentCases(List<StudentCase> list) {
+    public synchronized void saveStudentCases(List<StudentCase> list) {
         try {
             XMLEncoder encoder = new XMLEncoder(
                     new BufferedOutputStream(
@@ -225,7 +225,7 @@ public class ServerDAOImpl implements ServerDAO {
     }
 
     @Override
-    public void saveUsersList(List<User> list) {
+    public synchronized void saveUsersList(List<User> list) {
         try {
             XMLEncoder encoder = new XMLEncoder(
                     new BufferedOutputStream(

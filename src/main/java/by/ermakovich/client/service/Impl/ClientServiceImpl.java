@@ -1,7 +1,9 @@
 package by.ermakovich.client.service.Impl;
 
-import by.ermakovich.client.DAO.ClientDAOFactory;
+import by.ermakovich.client.service.socketManager.SocketManager;
 import by.ermakovich.client.service.ClientService;
+import by.ermakovich.entity.RequestType;
+import by.ermakovich.entity.Response;
 import by.ermakovich.entity.StudentCase;
 import by.ermakovich.entity.User;
 
@@ -9,39 +11,43 @@ import java.io.IOException;
 import java.util.List;
 
 public class ClientServiceImpl implements ClientService {
-    @Override
-    public List<StudentCase> getStudentCases() throws IOException {
-        return ClientDAOFactory.getInstance().getClientDAO().getStudentCases();
-    }
+    SocketManager socketManager = new SocketManager("localhost",8080);
 
     @Override
-    public List<User> getUsers() throws IOException {
-        return ClientDAOFactory.getInstance().getClientDAO().getUsers();
+    public List<StudentCase> getStudentCases() throws IOException {
+        Response response = socketManager.sendRequest(null, RequestType.VIEW);
+        return (List<StudentCase>) response.getBody();
     }
+
 
     @Override
     public boolean editStudentCase(StudentCase studentCase) throws IOException {
-        return ClientDAOFactory.getInstance().getClientDAO().editStudentCase(studentCase);
+        return (boolean) socketManager.sendRequest(studentCase,RequestType.EDIT).getBody();
     }
 
     @Override
     public boolean createStudentCase(StudentCase studentCase) throws IOException {
-        return ClientDAOFactory.getInstance().getClientDAO().createStudentCase(studentCase);
+        return (boolean) socketManager.sendRequest(studentCase, RequestType.CREATE).getBody();
     }
 
     @Override
     public StudentCase getStudentCaseById(String caseId) throws IOException {
-        return ClientDAOFactory.getInstance().getClientDAO().getStudentCaseById(caseId);
+        return (StudentCase) socketManager.sendRequest(caseId, RequestType.GETBYID).getBody();
     }
 
     @Override
     public User login(User user) throws IOException {
-     return ClientDAOFactory.getInstance().getClientDAO().login(user);
+        return (User)socketManager.sendRequest(user, RequestType.LOGIN).getBody();
     }
 
     @Override
     public User signIn(User user) throws IOException {
-        return ClientDAOFactory.getInstance().getClientDAO().signIn(user);
+        return (User) socketManager.sendRequest(user, RequestType.SIGNIN).getBody();
+    }
+
+    @Override
+    public List<User> getUsers() throws IOException {
+        return (List<User>) socketManager.sendRequest(null, RequestType.VIEWUSERS).getBody();
     }
 
 }

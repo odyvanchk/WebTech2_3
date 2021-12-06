@@ -1,4 +1,4 @@
-package by.ermakovich.client.DAO.socketManager;
+package by.ermakovich.client.service.socketManager;
 
 import by.ermakovich.entity.ClientRequest;
 import by.ermakovich.entity.RequestType;
